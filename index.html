@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FamilyHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SVG SPRITE -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-home"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-grid"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></symbol>
+  <symbol id="i-users"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-check2"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+  <symbol id="i-cal"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-trophy"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 2 6 2 12 8 12"/><polyline points="16 6 22 6 22 12 16 12"/><path d="M12 17c-3.3 0-6-2.7-6-6V6h12v5c0 3.3-2.7 6-6 6z"/><path d="M12 17v4"/><path d="M8 21h8"/></symbol>
+  <symbol id="i-chart"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
+  <symbol id="i-logout"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+  <symbol id="i-plus"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="i-trash"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6M9 6V4h6v2"/></symbol>
+  <symbol id="i-check"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-x"       viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-star"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-clock"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-gift"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></symbol>
+  <symbol id="i-flag"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+  <symbol id="i-cl"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></symbol>
+  <symbol id="i-cr"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></symbol>
+  <symbol id="i-sun"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="i-moon"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-pie"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></symbol>
+</svg>
+
+<!-- ══════════════ LOGIN ══════════════ -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="brand-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <h1>Family<span>Hub</span></h1>
+      <p>Gestão da sua família em um só lugar</p>
+    </div>
+    <div class="login-tabs">
+      <div class="login-tab active" onclick="switchTab('entrar')">Entrar</div>
+      <div class="login-tab" onclick="switchTab('cadastrar')">Nova Família</div>
+    </div>
+    <div class="login-card" id="form-entrar">
+      <h2>Bem-vindo de volta</h2>
+      <div class="err" id="err-entrar"></div>
+      <div class="fg"><label>Código da família</label><input type="text" id="login-codigo" placeholder="Ex: SILVA2024" style="text-transform:uppercase" autocomplete="off"></div>
+      <div class="fg"><label>Senha</label><input type="password" id="login-senha" placeholder="Sua senha"></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px" onclick="doLogin()">
+        <svg width="14" height="14"><use href="#i-logout" transform="scale(-1,1) translate(-24,0)"/></svg> Entrar
+      </button>
+    </div>
+    <div class="login-card" id="form-cadastrar" style="display:none">
+      <h2>Criar nova família</h2>
+      <div class="err" id="err-cadastrar"></div>
+      <div class="fg"><label>Nome da família</label><input type="text" id="reg-nome" placeholder="Ex: Família Silva"></div>
+      <div class="fg"><label>Código único</label><input type="text" id="reg-codigo" placeholder="Ex: SILVA2024" oninput="this.value=this.value.toUpperCase().replace(/\s/g,'')">
+        <div class="hint">3–20 caracteres, sem espaços. Compartilhe com a família.</div></div>
+      <div class="fg"><label>Senha</label><input type="password" id="reg-senha" placeholder="Crie uma senha"></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:6px" onclick="doRegister()">
+        <svg width="14" height="14"><use href="#i-plus"/></svg> Criar família
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ APP ══════════════ -->
+<div id="app">
+  <aside class="sidebar">
+    <div class="sb-logo">
+      <div class="sb-brand">
+        <div class="sb-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="sb-title">Family<span>Hub</span></div>
+      </div>
+      <div class="sb-meta">
+        <div class="sb-family" id="sb-nome">—</div>
+        <div class="sb-code"  id="sb-cod">—</div>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-item active" onclick="showPage('dashboard')"><svg width="16" height="16"><use href="#i-grid"/></svg><span>Dashboard</span></div>
+      <div class="nav-item" onclick="showPage('membros')"><svg width="16" height="16"><use href="#i-users"/></svg><span>Membros</span></div>
+      <div class="nav-item" onclick="showPage('atividades')"><svg width="16" height="16"><use href="#i-check2"/></svg><span>Atividades</span></div>
+      <div class="nav-item" onclick="showPage('calendario')"><svg width="16" height="16"><use href="#i-cal"/></svg><span>Calendário</span></div>
+      <div class="nav-item" onclick="showPage('recompensas')"><svg width="16" height="16"><use href="#i-trophy"/></svg><span>Recompensas</span></div>
+      <div class="nav-item" onclick="showPage('graficos')"><svg width="16" height="16"><use href="#i-chart"/></svg><span>Gráficos</span></div>
+    </nav>
+    <div class="sb-footer">
+      <button class="btn btn-theme-sb" onclick="toggleTheme()">
+        <svg width="14" height="14" id="sb-theme-icon"><use href="#i-moon"/></svg>
+        <span id="sb-theme-lbl">Modo escuro</span>
+      </button>
+      <button class="btn btn-logout" onclick="doLogout()">
+        <svg width="14" height="14"><use href="#i-logout"/></svg>
+        <span>Sair</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h2 id="page-title">Dashboard</h2>
+      <div class="topbar-right">
+        <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema" id="topbar-theme-btn">
+          <svg width="16" height="16"><use href="#i-moon" id="topbar-theme-icon"/></svg>
+        </button>
+        <div id="topbar-actions"></div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="page active" id="page-dashboard">
+      <div class="stats-grid">
+        <div class="stat-card" style="--ac:var(--green)"><div class="sc-icon"><svg width="17" height="17" stroke="var(--green)" fill="none"><use href="#i-users"/></svg></div><div class="sc-label">Membros</div><div class="sc-value" id="s-mb">—</div><div class="sc-sub">na família</div></div>
+        <div class="stat-card" style="--ac:var(--blue)"><div class="sc-icon"><svg width="17" height="17" stroke="var(--blue)" fill="none"><use href="#i-check"/></svg></div><div class="sc-label">Concluídas</div><div class="sc-value" id="s-co">—</div><div class="sc-sub">atividades</div></div>
+        <div class="stat-card" style="--ac:var(--red)"><div class="sc-icon"><svg width="17" height="17" stroke="var(--red)" fill="none"><use href="#i-clock"/></svg></div><div class="sc-label">Pendentes</div><div class="sc-value" id="s-pe">—</div><div class="sc-sub">a fazer</div></div>
+        <div class="stat-card" style="--ac:var(--amber)"><div class="sc-icon"><svg width="17" height="17" stroke="var(--amber)" fill="none"><use href="#i-cal"/></svg></div><div class="sc-label">Hoje</div><div class="sc-value" id="s-hj">—</div><div class="sc-sub">atividades</div></div>
+      </div>
+      <div class="grid-2">
+        <div class="card"><div class="card-head"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-cal"/></svg><h3>Próximas atividades</h3></div><div id="d-prox"></div></div>
+        <div class="card"><div class="card-head"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-trophy"/></svg><h3>Ranking de pontos</h3></div><div id="d-rank"></div></div>
+      </div>
+      <div style="height:13px"></div>
+      <div class="card"><div class="card-head"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-grid"/></svg><h3>Por categoria</h3></div><div id="d-tipos"></div></div>
+    </div>
+
+    <!-- MEMBROS -->
+    <div class="page" id="page-membros"><div class="members-grid" id="members-grid"></div></div>
+
+    <!-- ATIVIDADES -->
+    <div class="page" id="page-atividades">
+      <div class="filters">
+        <select class="fsel" id="f-tipo" onchange="loadAtividades()"><option value="">Todos os tipos</option><option>Escolar</option><option>Esporte</option><option>Social</option><option>Saúde</option><option>Outro</option></select>
+        <select class="fsel" id="f-membro" onchange="loadAtividades()"><option value="">Todos os membros</option></select>
+        <select class="fsel" id="f-pri" onchange="loadAtividades()"><option value="">Todas as prioridades</option><option value="alta">Alta</option><option value="media">Média</option><option value="baixa">Baixa</option></select>
+        <select class="fsel" id="f-status" onchange="loadAtividades()"><option value="">Todos os status</option><option value="pendente">Pendentes</option><option value="concluida">Concluídas</option></select>
+      </div>
+      <div class="acts-list" id="acts-list"></div>
+    </div>
+
+    <!-- CALENDARIO -->
+    <div class="page" id="page-calendario">
+      <div class="cal-header">
+        <div class="cal-month" id="cal-lbl"></div>
+        <div class="cal-nav">
+          <button onclick="calNav(-1)"><svg width="13" height="13"><use href="#i-cl"/></svg></button>
+          <button onclick="calNav(1)"><svg width="13" height="13"><use href="#i-cr"/></svg></button>
+        </div>
+      </div>
+      <div class="cal-legend" id="cal-leg"></div>
+      <div class="cal-grid" id="cal-grid"></div>
+    </div>
+
+    <!-- RECOMPENSAS -->
+    <div class="page" id="page-recompensas">
+      <div class="grid-2" style="margin-bottom:13px">
+        <div class="card"><div class="card-head"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-trophy"/></svg><h3>Ranking</h3></div><div id="r-rank"></div></div>
+        <div class="card"><div class="card-head"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-history"/></svg><h3>Histórico de resgates</h3></div><div id="r-hist"></div></div>
+      </div>
+      <div class="card"><div class="card-head"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-gift"/></svg><h3>Catálogo de recompensas</h3></div><div class="rewards-grid" id="rewards-grid" style="margin-top:13px"></div></div>
+    </div>
+
+    <!-- GRÁFICOS -->
+    <div class="page" id="page-graficos">
+      <div class="charts-grid">
+        <div class="chart-card full">
+          <div class="chart-title"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-chart"/></svg> Atividades — últimos 7 dias</div>
+          <div id="chart-line-wrap"></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-pie"/></svg> Distribuição por prioridade</div>
+          <div class="donut-wrap">
+            <svg id="donut-svg" width="110" height="110" viewBox="0 0 110 110" style="flex-shrink:0"></svg>
+            <div class="donut-legend" id="donut-legend"></div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-users"/></svg> Progresso por membro</div>
+          <div id="chart-members"></div>
+        </div>
+        <div class="chart-card full">
+          <div class="chart-title"><svg width="13" height="13" stroke="var(--muted)" fill="none"><use href="#i-grid"/></svg> Total por categoria</div>
+          <div id="chart-tipos"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<!-- MODAL MEMBRO -->
+<div class="modal-overlay" id="modal-membro">
+  <div class="modal">
+    <div class="modal-head"><h3>Novo membro</h3><button class="modal-close" onclick="closeM('modal-membro')"><svg width="15" height="15"><use href="#i-x"/></svg></button></div>
+    <div class="form-group"><label>Nome</label><input type="text" id="m-nome" placeholder="Nome completo" oninput="updatePreview()"></div>
+    <div class="form-group"><label>Papel</label><select id="m-papel"><option>Pai</option><option>Mãe</option><option>Filho</option><option>Filha</option><option>Avô</option><option>Avó</option><option>Outro</option></select></div>
+    <div class="form-group">
+      <label>Cor do perfil</label>
+      <div class="color-picker" id="cp">
+        <div class="color-opt selected" data-v="#2a7339" style="background:#2a7339" onclick="selCor(this)"></div>
+        <div class="color-opt" data-v="#1e4fd8" style="background:#1e4fd8" onclick="selCor(this)"></div>
+        <div class="color-opt" data-v="#be185d" style="background:#be185d" onclick="selCor(this)"></div>
+        <div class="color-opt" data-v="#c47d0e" style="background:#c47d0e" onclick="selCor(this)"></div>
+        <div class="color-opt" data-v="#7c3aed" style="background:#7c3aed" onclick="selCor(this)"></div>
+        <div class="color-opt" data-v="#c0392b" style="background:#c0392b" onclick="selCor(this)"></div>
+        <div class="color-opt" data-v="#0e7490" style="background:#0e7490" onclick="selCor(this)"></div>
+        <div class="color-opt" data-v="#374151" style="background:#374151" onclick="selCor(this)"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+        <div class="init-preview" id="init-prev" style="background:#2a7339">AB</div>
+        <span style="font-size:0.72rem;color:var(--muted)">Prévia do avatar</span>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeM('modal-membro')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveMembro()"><svg width="13" height="13"><use href="#i-check"/></svg> Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL ATIVIDADE -->
+<div class="modal-overlay" id="modal-ativ">
+  <div class="modal">
+    <div class="modal-head"><h3>Nova atividade</h3><button class="modal-close" onclick="closeM('modal-ativ')"><svg width="15" height="15"><use href="#i-x"/></svg></button></div>
+    <div class="form-group"><label>Descrição</label><input type="text" id="a-desc" placeholder="O que precisa ser feito?"></div>
+    <div class="form-row">
+      <div class="form-group"><label>Tipo</label><select id="a-tipo"><option>Escolar</option><option>Esporte</option><option>Social</option><option>Saúde</option><option>Outro</option></select></div>
+      <div class="form-group"><label>Responsável</label><select id="a-membro"><option value="">Família toda</option></select></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Data</label><input type="date" id="a-data"></div>
+      <div class="form-group"><label>Hora</label><input type="time" id="a-hora"></div>
+    </div>
+    <div class="form-group">
+      <label>Prioridade</label>
+      <div class="pri-group">
+        <div class="pri-opt sel" data-v="baixa" onclick="selPri(this)"><svg width="11" height="11" stroke="currentColor" fill="none"><use href="#i-flag"/></svg> Baixa</div>
+        <div class="pri-opt" data-v="media" onclick="selPri(this)"><svg width="11" height="11" stroke="currentColor" fill="none"><use href="#i-flag"/></svg> Média</div>
+        <div class="pri-opt" data-v="alta" onclick="selPri(this)"><svg width="11" height="11" stroke="currentColor" fill="none"><use href="#i-flag"/></svg> Alta</div>
+      </div>
+    </div>
+    <div class="form-group"><label>Pontos ao concluir</label><input type="number" id="a-pontos" value="10" min="1" max="100"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeM('modal-ativ')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveAtiv()"><svg width="13" height="13"><use href="#i-check"/></svg> Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL RECOMPENSA -->
+<div class="modal-overlay" id="modal-recomp">
+  <div class="modal">
+    <div class="modal-head"><h3>Nova recompensa</h3><button class="modal-close" onclick="closeM('modal-recomp')"><svg width="15" height="15"><use href="#i-x"/></svg></button></div>
+    <div class="form-group"><label>Título</label><input type="text" id="rc-titulo" placeholder="Ex: Sorvete, Filme..."></div>
+    <div class="form-group"><label>Descrição</label><input type="text" id="rc-desc" placeholder="Detalhes (opcional)"></div>
+    <div class="form-group"><label>Custo em pontos</label><input type="number" id="rc-custo" value="50" min="1"></div>
+    <div class="form-group"><label>Ícone</label><div class="icon-grid" id="icon-grid"></div></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeM('modal-recomp')">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveRecomp()"><svg width="13" height="13"><use href="#i-check"/></svg> Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL RESGATAR -->
+<div class="modal-overlay" id="modal-resgatar">
+  <div class="modal">
+    <div class="modal-head"><h3 id="rsg-titulo">Resgatar</h3><button class="modal-close" onclick="closeM('modal-resgatar')"><svg width="15" height="15"><use href="#i-x"/></svg></button></div>
+    <p style="font-size:0.81rem;color:var(--muted);margin-bottom:12px">Quem vai resgatar?</p>
+    <div id="rsg-list"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeM('modal-resgatar')">Cancelar</button>
+      <button class="btn btn-primary" onclick="confirmarResgate()"><svg width="13" height="13"><use href="#i-check"/></svg> Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span id="toast-msg"></span></div>
+
+<script src="app.js"></script>
+</body>
+</html>
